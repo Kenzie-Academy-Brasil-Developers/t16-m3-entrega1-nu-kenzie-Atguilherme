@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700&display=swap');
+
+:root {
+
+  font-family: Nunito, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --primary1:#FD377E;
+  --primary2:#E34981;
+  --secondary:#03B898;
+  --grey4:#212529;
+  --grey3:#868E96;
+  --grey2:#E9ECEF;
+  --grey1:#F8F9FA;
+
+  /* Bold */
+  --title1: 38px;
+  --title2: 22px;
+  --title3: 16px;
+  --title4: 12px;
+  /* Regular */
+  --title1: 38px;
+  --headline: 16px;
+  --body: 12px;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root{
+  
+  width: 100%;
+
+}
+

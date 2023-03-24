@@ -1,0 +1,16 @@
+.home__main{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+@media(min-width: 769px) {
+
+    .home__main{
+        flex-direction: row;
+        gap: 2%;
+    }
+
+}
