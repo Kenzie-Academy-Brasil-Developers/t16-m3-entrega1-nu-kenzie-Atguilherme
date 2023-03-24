@@ -16,11 +16,17 @@ export const accountTypes = [
 ];
 
 function App() {
-  const [totalBalance, setTotalBalance] = useState(0);
-
   const [darkMode, setDarkMode] = useState(false);
 
   const [accountList, setAccountList] = useState([]);
+
+  const totalBalance = accountList.reduce((previousValue, account) => {
+    if (account.accountType === "Entrada") {
+      return previousValue + account.accountValue;
+    } else {
+      return previousValue - account.accountValue;
+    }
+  }, 0);
 
   const addAccountToAccountList = (formData) => {
     const newAccount = {
@@ -29,18 +35,14 @@ function App() {
       accountValue: Number(formData.accountValue),
     };
     setAccountList([...accountList, newAccount]);
-    setTotalBalance(totalBalance + newAccount.accountValue)
   };
 
   const removeAccountFromAccountList = (accountId) => {
     const newAccountList = accountList.filter(
       (account) => account.id !== accountId
     );
-    
+
     setAccountList(newAccountList);
-    const newTotalBalance = newAccountList.reduce((previousValue, currentValue) => {return previousValue + currentValue.accountValue},0)
-    
-    setTotalBalance(newTotalBalance)
   };
 
   const editAccountFromAccountList = (accountId, accountValue) => {
@@ -54,16 +56,6 @@ function App() {
 
     setAccountList(newAccountList);
   };
-
-
-  // const allValues = accountList.filter(
-  //   (account) => account.accountValue !== 0
-  //  )
-
-  // setTotalBalance(
-  //   allValues.reduce((previousValue, currentValue) => {return previousValue + currentValue},0)
-  // )
-
 
   return (
     <div className={darkMode ? "darkMode" : "lightMode"}>

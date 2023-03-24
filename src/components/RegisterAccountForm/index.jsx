@@ -18,6 +18,7 @@ export const RegisterAccountForm = ({
   const submit = (event) => {
     event.preventDefault();
     addAccountToAccountList(formData);
+        
   };
 
   const isEmpty =
