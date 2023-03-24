@@ -32,12 +32,15 @@ function App() {
     setTotalBalance(totalBalance + newAccount.accountValue)
   };
 
-  const removeAccountFromAccountList = (accountId, accountValue) => {
+  const removeAccountFromAccountList = (accountId) => {
     const newAccountList = accountList.filter(
       (account) => account.id !== accountId
     );
-    console.log(accountValue)
+    
     setAccountList(newAccountList);
+    const newTotalBalance = newAccountList.reduce((previousValue, currentValue) => {return previousValue + currentValue.accountValue},0)
+    
+    setTotalBalance(newTotalBalance)
   };
 
   const editAccountFromAccountList = (accountId, accountValue) => {
@@ -52,25 +55,15 @@ function App() {
     setAccountList(newAccountList);
   };
 
-  // if (accountList.length > 0) {
-  //   const allEntries = accountList.filter(
-  //     (account) => account.accountType === "Entrada"
-  //   );
 
-  //   const totalEntries = allEntries.reduce((previousValue, currentEntry) => {
-  //     return previousValue + currentEntry.accountValue;
-  //   }, 0);
-  //   const allExits = accountList.filter(
-  //     (account) => account.accountType === "Saída"
-  //   );
-  //   const totalExits = allExits.reduce((previousValue, currentExit) => {
-  //     return previousValue + currentExit.accountValue;
-  //   }, 0);
+  // const allValues = accountList.filter(
+  //   (account) => account.accountValue !== 0
+  //  )
 
-  //   setTotalBalance(totalEntries - totalExits);
-  // } else {
-  //   setTotalBalance(0);
-  // }
+  // setTotalBalance(
+  //   allValues.reduce((previousValue, currentValue) => {return previousValue + currentValue},0)
+  // )
+
 
   return (
     <div className={darkMode ? "darkMode" : "lightMode"}>
