@@ -18,7 +18,11 @@ export const RegisterAccountForm = ({
   const submit = (event) => {
     event.preventDefault();
     addAccountToAccountList(formData);
-        
+    setFormData({
+      accountDescription: "",
+      accountValue: "",
+      accountType: "",
+    });
   };
 
   const isEmpty =
@@ -54,7 +58,7 @@ export const RegisterAccountForm = ({
             <input
               name="input__value"
               className="input__value"
-              placeholder=""
+              placeholder="Digite o valor"
               type="number"
               value={formData.accountValue}
               onChange={(event) =>
