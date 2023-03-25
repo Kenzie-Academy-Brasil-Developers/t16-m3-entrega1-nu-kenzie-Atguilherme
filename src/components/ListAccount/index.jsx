@@ -1,5 +1,4 @@
 import { AccountCard } from "../ListAccount/AccountCard";
-//import styles from "./style.module.css"
 
 export const ListAccount = ({
   accountList,
@@ -9,7 +8,6 @@ export const ListAccount = ({
   return (
     <>
       {accountList.length > 0 ? (
-        // <ul className={styles.accountList}>
         <ul className="ul__container">
           {accountList.map((account) => {
             return (

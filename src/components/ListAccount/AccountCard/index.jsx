@@ -1,4 +1,5 @@
 import "../../../styles/AccountCard.css";
+import styles from "../../ListAccount/style.module.css";
 
 export const AccountCard = ({
   accountId,
@@ -6,7 +7,13 @@ export const AccountCard = ({
   removeAccountFromAccountList,
 }) => {
   return (
-    <li className="card__container">
+    <li
+      className={
+        account.accountType == "Despesa"
+          ? styles.border_grey
+          : "card__container"
+      }
+    >
       <div className="div__left">
         <h3>{account.accountDescription}</h3>
         <p>
