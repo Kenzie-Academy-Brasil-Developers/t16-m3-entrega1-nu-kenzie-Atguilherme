@@ -2,7 +2,6 @@ import { useState } from "react";
 import { DefaultTemplate } from "./templates/TemplateDefault";
 import { RegisterAccountForm } from "./components/RegisterAccountForm";
 import { v4 as uuidv4 } from "uuid";
-import { ListAccount } from "./components/ListAccount";
 
 export const accountTypes = [
   {
@@ -10,8 +9,8 @@ export const accountTypes = [
     label: "Entrada",
   },
   {
-    slug: "Saída",
-    label: "Saída",
+    slug: "Despesa",
+    label: "Despesa",
   },
 ];
 
